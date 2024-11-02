@@ -21,7 +21,7 @@ $$g_D = \sum_{x \in D} w_x \cdot x$$
 
 $$\sum_{x \in D} w_x d(x, g_D)^2 = \frac{1}{2} I_D$$
 
---
+---
 
 Given a subgroup of elements (a cluster) $$C \subset D$$, we define
 
