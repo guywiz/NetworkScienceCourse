@@ -7,3 +7,5 @@ Classes may sometimes also be called *groups* or *clusters*. Supervized classifi
 Machine learning algorithms have proven to be quite good at learning how to classify elements based on examples implicitly describing the known classes.
 
 Conversely, *unsupervized classification* is when classes are unknown, neither their number of their characteristics. The problem then is to determine whether some group structure emerge from the set $$D$$ based on some distance or dissimilarity between its elements.
+
+- [Clustering high-dimensional data](./High_dimensional_data/)
