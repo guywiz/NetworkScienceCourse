@@ -11,3 +11,5 @@ Course topics will be added periodically.
 - [Clustering and Network Modularity](./Clustering/README.md)
 - Network Projection, Filtering and Transformation
 - Graph Drawing
+
+The course will also cover an introductory tutorial to the [Tulip Graph Visualization Framework](https://tulip.labri.fr/), as well as its companion [tulip-python library](https://pypi.org/project/tulip-python/).
