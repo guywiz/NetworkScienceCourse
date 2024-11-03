@@ -76,5 +76,5 @@ Hence the equality $$\frac{1}{2} I_D = \frac{1}{2} I_{intra} + \frac{1}{2} I_{in
 
 ---
 
-The [$$k$$-means algorithm](./kmeans.md) perfectly illlustrates how Huygens principle can be used to design a clustering algorithm.
+The $$k$$[-means algorithm](./kmeans.md) perfectly illlustrates how Huygens principle can be used to design a clustering algorithm.
 
