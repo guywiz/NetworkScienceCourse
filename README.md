@@ -6,4 +6,8 @@ It has been running for a number of years, built in collaboration with [Bruno Pi
 
 Course topics will be added periodically.
 
-- [Clustering](./Clustering/README.md)
+- Random networks, small world networks, scale free networks
+- Network Centralities
+- [Clustering and Network Modularity](./Clustering/README.md)
+- Network Projection, Filtering and Transformation
+- Graph Drawing
