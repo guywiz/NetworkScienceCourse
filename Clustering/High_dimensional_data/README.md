@@ -21,7 +21,7 @@ $$g_D = \sum_{x \in D} w_x \cdot x$$
 
 **Exercise**. Inertia can be computed relative to the barycenter, more precisely we have:
 
-$$\sum_{x \in D} w_x d(x, g_D)^2 = \frac{1}{2} I_D$$
+$$I_D = 2 \sum_{x \in D} w_x d(x, g_D)^2$$
 
 ---
 
@@ -38,15 +38,39 @@ Given a subgroup of elements (a cluster) $$C \subset D$$, we define
 
 $$g_D = \sum_{i=1}^{k} w_C g_C$$
 
+We also have $$I_{inter} = \sum_{i, j} w_{C_i} \cdot w_{C_j} \cdot d(g_{C_i}, g_{C_j})^2 = 2 \sum_{C} w_{C} \cdot d(g_C, g_D)^2$$
+
 ---
 
 
 **Huygen's Principle**. We have:
 
-$$I_D = \sum_C I_C + \sum_C w_C d(g_C, g_D)^2$$
+$$I_D = \sum_C (w_C \cdot I_C) + I_{inter}$$
 
 That is, the total inertia splits into cluster inertia (intra) and inter-cluster inertia (between berycenters).
 
 Observe that this identity holds whatever clusters we may consider. As a consequence, since total inertia is invariant, Huygen's principle states that minimizing intra-cluster inertia is equivalent to maximizing inter-cluster distance.
 
-The proof of the identity is left as an exercise.
+*Proof*. The proof exploits the fact that we are dealing with Euclidean distances, for which we have
+
+$$d(x, y)^2 = \langle x-y, x-y \rangle$$
+
+where points $$x, y$$ may be considered as vectors and $$\langle \cdot, \cdot \rangle$$ denotes the usual scalar product. Hence,
+
+$$\frac{1}{2} I_D = \sum_{x \in D} w_x d(x, g_D)^2 = \sum_{x \in D} w_x \langle x-g_D, x-g_D \rangle
+= \sum_{x \in D} w_x \langle x, x \rangle - 2w_x \langle x, g_D \rangle + w_x \langle g_D, g_D \rangle$$
+
+$$= \big( \sum_{x \in D} w_x \langle x, x \rangle - 2w_x \langle x, g_D \rangle \big) + \langle g_D, g_D \rangle$$
+
+We also have:
+
+$$\frac{1}{2} I_{intra} + \frac{1}{2} I_{inter} = \sum_C w_C \sum_{x \in C} w_{x|C} d(x, g_C)^2 + \sum_C w_C d(g_C, g_D)^2$$
+
+$$= \sum_C w_C \sum_{x \in C} w_{x|C} \langle x-g_C, x-g_C \rangle + \sum_C w_C \langle g_C-g_D, , g-C-g_D \rangle$$
+
+$$= \sum_C \sum_{x \in C} w_C w_{x|C} \langle x, x \rangle - 2 w_C w_{x|C} \langle x, g_C \rangle + w_C w_{x|C} \langle g_C, g_C \rangle$$
+
+$$= \big( \sum_C \sum_{x \in C} w_C w_{x|C} \langle x, x \rangle - 2 w_C w_{x|C} \langle x, g_C \rangle \big) + \big( \sum_C \sum_{x \in C} w_C w_{x|C} \langle g_C, g_C \rangle \big)$$
+
+Hence the equality $$\frac{1}{2} I_D = \frac{1}{2} I_{intra} + \frac{1}{2} I_{inter}$$ follows by properly grouping terms since $$w_{x|C} = w_x$$ and $$g_D = \sum_{i=1}^{k} w_C g_C$$.
+
