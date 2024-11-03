@@ -10,3 +10,4 @@ Conversely, *unsupervized classification* is when classes are unknown, neither t
 
 - [Clustering high-dimensional data](./High_dimensional_data/)
   - $$k$$[-means clustering algorithm for high-dimensional data](./High_dimensional_data/kmeans.md)
+- [Graph communities](./Graphs/)
