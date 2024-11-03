@@ -74,3 +74,7 @@ $$= \big( \sum_C \sum_{x \in C} w_C w_{x|C} \langle x, x \rangle - 2 w_C w_{x|C}
 
 Hence the equality $$\frac{1}{2} I_D = \frac{1}{2} I_{intra} + \frac{1}{2} I_{inter}$$ follows by properly grouping terms since $$w_{x|C} = w_x$$ and $$g_D = \sum_{i=1}^{k} w_C g_C$$.
 
+---
+
+The [$$k$$-means algorithm](./kmeans.md) perfectly illlustrates how Huygens principle can be used to design a clustering algorithm.
+
