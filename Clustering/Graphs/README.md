@@ -68,9 +68,9 @@ Hence by properly keeping a number of values, computing $$\Delta Q$$ can be obta
 
 ---
 
-One drawback of the Louvain algorithm, as it is implemented, is it can disconnect a community when migrating a node to anoter community as shows the figure:
+One drawback of the Louvain algorithm, as it is implemented, is it can disconnect a community when migrating a node to another community as shows the figure (moving node 0 from the red community a) to the blue community b) results in disconnecting the red community). The Leiden algorithm prevents this from happening.
 
-
+<img src="./Leiden.png" width="75%">
 
 
 ## Bibliographical references
