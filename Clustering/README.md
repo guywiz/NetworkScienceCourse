@@ -9,4 +9,4 @@ Machine learning algorithms have proven to be quite good at learning how to clas
 Conversely, *unsupervized classification* is when classes are unknown, neither their number of their characteristics. The problem then is to determine whether some group structure emerge from the set $$D$$ based on some distance or dissimilarity between its elements.
 
 - [Clustering high-dimensional data](./High_dimensional_data/)
-  - [$$k$$-means clustering algorithm for high-dimensional data](./kmeans.md)
+  - $$k$$[-means clustering algorithm for high-dimensional data](./kmeans.md)
