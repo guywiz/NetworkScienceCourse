@@ -13,3 +13,5 @@ Course topics will be added periodically.
 - Graph Drawing
 
 The course will also cover an introductory tutorial to the [Tulip Graph Visualization Framework](https://tulip.labri.fr/), as well as its companion [tulip-python library](https://pypi.org/project/tulip-python/).
+
+- [Tulip howto](./Tulip/)
