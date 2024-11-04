@@ -28,11 +28,11 @@ So the problem is turned into an optimization one, that is, we seek to find a co
 The Louvain algorithm implements a very simple approach obtaining rather good results (in terms of modulalrity values).
 
 1. First, each node in the network is assigned to its own community.
-
 2. Next, for each node $$i$$, the change in modularity is calculated for removing $$i$$ from its own community and moving it into the community of each neighbor $$j$$ of $$i$$. This value is computed in two steps:
-
-- Compute the change in modularity $$\Delta Q$$ for removing node $$i$$ from its original community.
-- Compute the change in modularity $$\Delta Q$$ for inserting an isolated node $$i$$ (i.e. node $$i$$ has no connections and is in a community of only itself) into the community of neighbouring node, denoted  $$c_{j}$$.
+  - Compute the change in modularity $$\Delta Q$$ for removing node $$i$$ from its original community.
+  - Compute the change in modularity $$\Delta Q$$ for inserting an isolated node $$i$$ (i.e. node $$i$$ has no connections and is in a community of only itself) into the community of neighbouring node, denoted  $$c_{j}$$.
+3. Node $$i$$ is then moved in the community for which the modularity increase is maximum. If no increase is possible, node $$i$$ remains in its original community.
+4. The process is repeated until no modularity increase occurs.
 
 ---
 
