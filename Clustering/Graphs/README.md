@@ -36,7 +36,7 @@ The Louvain algorithm implements a very simple approach obtaining rather good re
 
 ---
 
-**Exercise**. Show that the modularity of a community containig a single node $$i$$ is equal to $$Q_{\{i\}} = - (\frac{k_i}{2m})^2$$.
+**Exercise**. Show that the modularity of a community containing a single node $$i$$ is equal to $$Q_{\{i\}} = - (\frac{k_i}{2m})^2$$.
 
 Write down the modularity of community $$c_j$$ containing node $$j$$ as
 
@@ -48,23 +48,30 @@ where it is understood that community $$c_j$$ has $$N_j$$ nodes indexed from 1 t
 
 $$\frac{1}{2m} \big( \sum_{\mu = 1}^{N_j} \sum_{\nu = 1}^{N_j} A_{\mu, \nu} + 2 k_i^{(j)} \big) - \big( \frac{\sum_{\mu=1}^{N_j} k_\mu + k_i}{2m} \big)^2$$
 
-so that the gain from moving node $$i$$ into community $$c_j$$ results in:
+where $$k_i^{(j)}$$ denotes the number of edges incident to $$i$$ and a node in community $$c_j$$. Consequently, the gain from moving node $$i$$ into community $$c_j$$ results in:
 
 $$\Delta Q = Q_{c'} - Q_{c_j} - Q_{\{i\}}$$
 
 ---
 
-**Exercise**. Similarly, compute the gain in modularity by moving node $$i$$ out of it community $$\Delta = Q_{c_i - \{i\}} - Q_{c_i} + Q_{\{i\}}$$.
+**Exercise**. Similarly, compute the gain in modularity by moving node $$i$$ out of it community $$\Delta Q = Q_{c_i - \{i\}} - Q_{c_i} + Q_{\{i\}}$$.
 
 ---
 
 Hence by properly keeping a number of values, computing $$\Delta Q$$ can be obtained readily, making the Louvain algorithm one of the fastest community detection algorithm.
+
+- Write $$Q_{C}^{(in)} = \frac{1}{2m} \sum_{\mu = 1}^{N_C} \sum_{\nu = 1}^{N_C} A_{\mu, \nu}$$ and $$Q_{C}^{(tot)} = \sum_{\mu=1}^{N_C} \frac{k_\mu}{2m}$$, so that $$Q_C = Q_{C}^{(in)} - \big( Q_{C}^{(tot)} \big)^2$$
+- Hence, referring to the notations above, we have $$Q_{c'}^{(in)} = Q_c^{(in)} + \frac{k_i^{(j)}}{m}$$ and $$Q_{c'}^{(tot)} = Q_c^{(tot)} + \frac{k_i}{2m}$$
+
+**Exercise**. Write similar expressions for $$Q_{c_i - \{i\}}^{(in)}$$ and $$Q_{c_i - \{i\}}^{(tot)}$$.
 
 | Communities |       | $$C_1$$ | $$C_2$$ | ... | $$C_k$$ |  $$\sum$$ |
 |-------------|-------|---------|---------|-----|---------|---------------|
 | **Nodes**   | $$i$$ | $$k_i^{(1)}$$ | $$k_i^{(2)}$$ | ... | $$k_i^{(p)}$$ | $$k_i = \sum_\mu k_i^{(\mu)}$$ |
 | $$\vdots$$  | ...   | ...           | ...           | ... | ... | |
 | $$\vdots$$  | $$j$$ | $$k_j^{(1)}$$ | $$k_j^{(2)}$$ | ... | $$k_j^{(p)}$$ | $$k_j  = \sum_\mu k_j^{(\mu)}$$ |
+| $$Q_{communitites}$$ | $$Q_{C_1}^{(in)}, Q_{C_1}^{(tot)}$$ | $$Q_{C_2}^{(in)}, Q_{C_2}^{(tot)}$$ | ... | ... | $$Q_{C_p}^{(in)}, Q_{C_p}^{(tot)}$$ | |
+
 
 ---
 
