@@ -17,7 +17,7 @@ $$Q(G, {\bf C}) = \frac{1}{2m} \sum_{i= 1}^N \sum_{j= 1}^N \big( A_{i,j} - \frac
 
 The above expression can be split into community modularity $$Q_C$$ so that $$Q = \sum_C Q_C$$.
 
-$$Q_C  = \frac{1}{2m} \sum_{i} \sum_{j} A_{i,j} \delta_{c_{i} = c_{j} = C} - \big( \sum_i \frac{k_i}{2m} {\bf 1}_{c_i = C} \big)^2 = \frac{\sum_{in}}{2m} - \big(\frac{\sum_{tot}}{2m}\big)^2$$
+$$Q_C  = \frac{1}{2m} \sum_{i} \sum_{j} A_{i,j} \delta_{c_{i} = c_{j} = C} - \big( \sum_i \frac{k_i}{2m} \delta_{c_i = C} \big)^2 = \frac{\sum_{in}}{2m} - \big(\frac{\sum_{tot}}{2m}\big)^2$$
 
 where $$\sum_{in}$$ is twice the number of edges within community $$C$$ and $$\sum_{tot}$$ is the number of edges incident to nodes in community $$C$$ (even if they connect nodes out of community $$C$$).
 
