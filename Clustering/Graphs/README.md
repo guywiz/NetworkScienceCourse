@@ -19,7 +19,7 @@ The above expression can be split into community modularity $$Q_C$$ so that $$Q 
 
 $$Q_C  = \frac{1}{2m} \sum_{i} \sum_{j} A_{i,j} \delta_{[c_{i} = c_{j} = C]} - \big( \sum_i \frac{k_i}{2m} \delta_{[c_i = C]} \big)^2 = \frac{\sum_{in}}{2m} - \big(\frac{\sum_{tot}}{2m}\big)^2$$
 
-where $$\sum_{in}$$ is twice the number of edges within community $$C$$ and $$\sum_{tot}$$ is the number of edges incident to nodes in community $$C$$ (even if they connect nodes out of community $$C$$).
+where $$\sum_{in}$$ is twice the number of edges within community $$C$$ and $$\sum_{tot}$$ is the number of edges incident to nodes in community $$C$$ (even if they connect nodes out of community $$C$$). We also write $$Q_C^{(in)} = \frac{\sum_{in}}{2m}$$ and $$Q_C^{(tot)} = \frac{\sum_{tot}}{2m}$$, so that $$Q_C = Q_{C}^{(in)} - \big( Q_{C}^{(tot)} \big)^2$$.
 
 ---
 
@@ -36,7 +36,7 @@ The Louvain algorithm implements a very simple approach obtaining rather good re
 
 ---
 
-**Exercise**. Show that the modularity of a community containing a single node $$i$$ is equal to $$Q_{\{i\}} = - (\frac{k_i}{2m})^2$$.
+**Exercise 1**. Show that the modularity of a community containing a single node $$i$$ is equal to $$Q_{\{i\}} = - (\frac{k_i}{2m})^2$$.
 
 Write down the modularity of community $$c_j$$ containing node $$j$$ as
 
@@ -44,26 +44,28 @@ $$Q_{c_j} = \frac{1}{2m} \sum_{\mu = 1}^{N_j} \sum_{\nu = 1}^{N_j} A_{\mu, \nu} 
 
 where it is understood that community $$c_j$$ has $$N_j$$ nodes indexed from 1 to $$N_j$$.
 
-**Exercise**. Show that the modularity of community $$c' = c_j \cup \{i\}$$ obtained by adding node $$i$$ to community $$c_j$$ is equal to:
+**Exercise 2**. Show that the modularity of community $$c' = c_j \cup \{i\}$$ obtained by adding node $$i$$ to community $$c_j$$ is equal to:
 
 $$\frac{1}{2m} \big( \sum_{\mu = 1}^{N_j} \sum_{\nu = 1}^{N_j} A_{\mu, \nu} + 2 k_i^{(j)} \big) - \big( \frac{\sum_{\mu=1}^{N_j} k_\mu + k_i}{2m} \big)^2$$
 
 where $$k_i^{(j)}$$ denotes the number of edges incident to $$i$$ and a node in community $$c_j$$. Consequently, the gain from moving node $$i$$ into community $$c_j$$ results in:
 
-$$\Delta Q = Q_{c'} - Q_{c_j} - Q_{\{i\}}$$
+$$\Delta Q^{\cup \{i\}} = Q_{c_j \cup \{i\}} - Q_{c_j} - Q_{\{i\}}$$
 
 ---
 
-**Exercise**. Similarly, compute the gain in modularity by moving node $$i$$ out of it community $$\Delta Q = Q_{c_i - \{i\}} - Q_{c_i} + Q_{\{i\}}$$.
+**Exercise 3**. Similarly, compute the gain in modularity by moving node $$i$$ out of its community $$\Delta Q^{- \{i\}} = Q_{c_i - \{i\}} - Q_{c_i} + Q_{\{i\}}$$.
 
 ---
 
-Hence by properly keeping a number of values, computing $$\Delta Q$$ can be obtained readily, making the Louvain algorithm one of the fastest community detection algorithm.
+The total gain when moving node $$i$$ out of its community and into community $$c_j$$ is thus equal to $$\Delta Q = \Delta Q^{\cup \{i\}} + \Delta Q^{- \{i\}} = Q_{c_j \cup \{i\}} + Q_{c_i - \{i\}} - Q_{c_i} - Q_{c_j}$$.
 
-- Write $$Q_{C}^{(in)} = \frac{1}{2m} \sum_{\mu = 1}^{N_C} \sum_{\nu = 1}^{N_C} A_{\mu, \nu}$$ and $$Q_{C}^{(tot)} = \sum_{\mu=1}^{N_C} \frac{k_\mu}{2m}$$, so that $$Q_C = Q_{C}^{(in)} - \big( Q_{C}^{(tot)} \big)^2$$
+By properly keeping a number of values, computing $$\Delta Q$$ can be obtained readily, making the Louvain algorithm one of the fastest community detection algorithm.
+
+- Recall our notations $$Q_{C}^{(in)} = \frac{\sum_{in}}{2m} = \frac{1}{2m} \sum_{\mu = 1}^{N_C} \sum_{\nu = 1}^{N_C} A_{\mu, \nu}$$ and $$Q_{C}^{(tot)} = \frac{\sum_{tot}}{2m} = \sum_{\mu=1}^{N_C} \frac{k_\mu}{2m}$$, so that $$Q_C = Q_{C}^{(in)} - \big( Q_{C}^{(tot)} \big)^2$$
 - Hence, referring to the notations above, we have $$Q_{c'}^{(in)} = Q_c^{(in)} + \frac{k_i^{(j)}}{m}$$ and $$Q_{c'}^{(tot)} = Q_c^{(tot)} + \frac{k_i}{2m}$$
 
-**Exercise**. Write similar expressions for $$Q_{c_i - \{i\}}^{(in)}$$ and $$Q_{c_i - \{i\}}^{(tot)}$$.
+**Exercise 4**. Write similar expressions for $$Q_{c_i - \{i\}}^{(in)}$$ and $$Q_{c_i - \{i\}}^{(tot)}$$.
 
 | Communities |       | $$C_1$$ | $$C_2$$ | ... | $$C_k$$ |  $$\sum$$ |
 |-------------|-------|---------|---------|-----|---------|---------------|
