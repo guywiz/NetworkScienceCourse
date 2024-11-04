@@ -13,11 +13,11 @@ The modularity is a measure attempting to capture how much a community structure
 
 Given a community structure $${\bf C} = (C_1, C_2, \ldots, C_p)$$, we define the modularity of $$G$$ as:
 
-$$Q(G, {\bf C}) = \frac{1}{2m} \sum_{i= 1}^N \sum_{j= 1}^N \big( A_{i,j} - \frac{k_i k_j}{2m} \big) \delta(c_i, c_j)$$
+$$Q(G, {\bf C}) = \frac{1}{2m} \sum_{i= 1}^N \sum_{j= 1}^N \big( A_{i,j} - \frac{k_i k_j}{2m} \big) \delta_{[c_i = c_j]}$$
 
 The above expression can be split into community modularity $$Q_C$$ so that $$Q = \sum_C Q_C$$.
 
-$$Q_C  = \frac{1}{2m} \sum_{i} \sum_{j} A_{i,j} \delta_{c_{i} = c_{j} = C} - \big( \sum_i \frac{k_i}{2m} \delta_{c_i = C} \big)^2 = \frac{\sum_{in}}{2m} - \big(\frac{\sum_{tot}}{2m}\big)^2$$
+$$Q_C  = \frac{1}{2m} \sum_{i} \sum_{j} A_{i,j} \delta_{[c_{i} = c_{j} = C]} - \big( \sum_i \frac{k_i}{2m} \delta_{[c_i = C]} \big)^2 = \frac{\sum_{in}}{2m} - \big(\frac{\sum_{tot}}{2m}\big)^2$$
 
 where $$\sum_{in}$$ is twice the number of edges within community $$C$$ and $$\sum_{tot}$$ is the number of edges incident to nodes in community $$C$$ (even if they connect nodes out of community $$C$$).
 
