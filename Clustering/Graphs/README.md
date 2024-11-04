@@ -44,11 +44,15 @@ $$Q_{c_j} = \frac{1}{2m} \sum_{\mu = 1}^{N_j} \sum_{\nu = 1}^{N_j} A_{\mu, \nu} 
 
 where it is understood that community $$c_j$$ has $$N_j$$ nodes indexed from 1 to $$N_j$$.
 
+---
+
 **Exercise 2**. Show that the modularity of community $$c' = c_j \cup \{i\}$$ obtained by adding node $$i$$ to community $$c_j$$ is equal to:
 
 $$\frac{1}{2m} \big( \sum_{\mu = 1}^{N_j} \sum_{\nu = 1}^{N_j} A_{\mu, \nu} + 2 k_i^{(j)} \big) - \big( \frac{\sum_{\mu=1}^{N_j} k_\mu + k_i}{2m} \big)^2$$
 
-where $$k_i^{(j)}$$ denotes the number of edges incident to $$i$$ and a node in community $$c_j$$. Consequently, the gain from moving node $$i$$ into community $$c_j$$ results in:
+where $$k_i^{(j)}$$ denotes the number of edges incident to $$i$$ and a node in community $$c_j$$. That is, $$Q_{c_j \cup \{i\}}^{(in)} = Q_{c_j}^{(in)} + \frac{k_i^{(j)}}{m}$$ and $$Q_{c_j \cup \{i\}}^{(tot)} = Q_{c_j}^{(tot)} + \frac{k_i}{2m}$$.
+
+Consequently, the gain from moving node $$i$$ into community $$c_j$$ results in:
 
 $$\Delta Q^{\cup \{i\}} = Q_{c_j \cup \{i\}} - Q_{c_j} - Q_{\{i\}}$$
 
