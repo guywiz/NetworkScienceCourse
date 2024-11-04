@@ -8,7 +8,7 @@ The modularity is a measure attempting to capture how much a community structure
 
 - We denote $${\bf A} = (A_{i,j})$$ the adjacency matrix of $$G$$ where indices $$i, j$$ correspond to nodes $$i, j \in V$$.
 - Let also denote $$k_i$$ the degree of node $$i$$, that is $$k_i = \deg_G(i)$$.
-- We write $$c_i$$ for the community to which node $$i$$ belongs. The Kronecker delta $$\delta(c_i, c_j)$$ equals 1 if ommunities $$c_i$$ an d$$c_j$$ coincide, that is if nodes $$i, j$$ belong to the same community.
+- We write $$c_i$$ for the community to which node $$i$$ belongs. The Kronecker delta $$\delta_{[c_i = c_j]}$$ equals 1 if communities $$c_i$$ an $$c_j$$ coincide, that is if nodes $$i, j$$ belong to the same community.
 - Finally, let $$N = |V|$$ equal the number of nodes in $$G$$, while $$m = |E|$$ is its number of edges.
 
 Given a community structure $${\bf C} = (C_1, C_2, \ldots, C_p)$$, we define the modularity of $$G$$ as:
