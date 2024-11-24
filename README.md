@@ -9,7 +9,7 @@ Course topics will be added periodically.
 - Random networks, small world networks, scale free networks
 - Network Centralities
 - [Clustering and Network Modularity](./Clustering/README.md)
-- Network Projection, Filtering and Transformation
+- [Network Projection, Filtering and Transformation](./Projections/README.md)
 - Graph Drawing
 
 The course will also cover an introductory tutorial to the [Tulip Graph Visualization Framework](https://tulip.labri.fr/), as well as its companion [tulip-python library](https://pypi.org/project/tulip-python/).
