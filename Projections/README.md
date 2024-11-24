@@ -12,9 +12,7 @@ The graphs used to model these situations are bipartite: they comprise nodes or 
 
 These graphs can be studied *per se*. For instance, one can prove that a graph is bipartie exactly when (iif $$\Leftrightarrow$$) it does not contian any cycle of odd length.
 
-<hr width="75%">
 ***Exercise***. Come up with a proof of this fact. $$\square$$
-<hr width="75%">
 
 Some authors have moreover claim that most social networks (or more precisely, Complex Networks)) take their origin in bipartite graphs.
 
@@ -24,7 +22,6 @@ Guillaume, J. L., & Latapy, M. (2006). *Bipartite graphs as models of complex ne
 
 Although giving a more accurate account of the data, bipartite graphs do not allow to readily use node centralities in order analyse the data at hand. Indeed, in a social network, the degree of a node indicates how many persons a given actor knows, while in a bipartite graphs we'd need to look at distance 2 neighbors. The situation is even more complex when considering length of paths connecting actors.
 
-<hr width="75%">
 ***Exercise***. The [SoutherWomen.xml](./SoutherWomen.xml) file contains the description of a network connecting women to events they participates to. This is a widely known dataset i social sciences and network science as well.
 
 1. What is the average number of participants in an event?
@@ -34,13 +31,10 @@ These exercises are designed to make you aware of the difficulties inherent in t
 
 The [following script](./SouthernWomen.py) reads the XML file and outputs a Tulip graph including node labels and icons.
 $$\square$$
-<hr width="75%">
 
 A network solely containing entities of the same type can be derived form the original bipartite graph. This derived network is called a *one-mode projection* since it amounts to build a new graph $$G = (V, E)$$ (where $$V = X$$ for instance) induce any length two path connecting $$x - y - x'$$ to a single edge $$\{x, x'\} \in E$$.
 
-<hr width="75%">
 ***Exercise***. A clique over a set of nodes $$C$$ is a graph where all pairs of nodes $$x, x' \in C$$ are connected. (Hence a clique contains $$\frac{|C| \cdot (|C|-1)}{2}$$ edges.)
-<hr width="75%">
 
 Let $$H$$ be a bipartite graph over nodes $$X \oplus Y$$ and $$G = (X, E)$$ be the one-mode projection on $$X$$ obtained from $$H$$. Let $$C \subset X$$ be the nodes incident to a given node $$y \in Y$$ in $$H$$. Then the clique over $$C$$ is a subgraph of $$G$$. $$\square$$
 
@@ -53,9 +47,7 @@ More precisely,
 
 we see that one-mode projection can be hard to analyze, if not visualize.
 
-<hr width="75%">
 ***Exercise***. Write a python script to compute the one-mode projection of the Southern Women dataset. $$\square$$
-<hr width="75%">
 
 ### Filtering edges using weights
 
@@ -77,14 +69,12 @@ $$\sum_{y \in N(x) \cap N(x')} \frac{1}{\deg(y)}$$
 
 Just as if being connected to a lower degree common neighbor is more significant.
 
-<hr width="75%">
 ***Exercise***.
 
 - Considering the classical weighted one-mode graphe computed from the Southern Women dataset, what is the threshold that leads to filtering out half of the lower weight edges?
 - Considering the Giatsidis weighted one-mode graphe computed from the Southern Women dataset, what is the threshold that leads to filtering out 75% of the lower weight edges?
 
 $$\square$$
-<hr width="75%">
 
 #### Zachary Neal's weighting scheme
 
@@ -104,7 +94,6 @@ We then may compute the value of $$k$$ for which $$P(|N(x) \cap N(x')| \geq k) \
 
 The figure illustrates the probability distribution when $$|Y|=30$$, $$|N(x)|=12$$ and $$|N(x')|=15$$. In this case, is appplying a threshold of $$\alpha = 0.05$$, the minimum number of events $$x, x'$$ must have in common to be significant is 8.
 
-<hr width="75%">
 ***Exercise***. Starting form the Southern Women bipartite graph, compute the Neal projection scheme to with confidence threshold $$\alpha = 0.05$$ to obtain a one-mode graph between women nodes.
 
 ***Exercise***. Applying the Neal projection scheme with $$\alpha = 0.05$$ confidence,
@@ -113,7 +102,6 @@ The figure illustrates the probability distribution when $$|Y|=30$$, $$|N(x)|=12
 - is the most central woman (*w.r.t.* betweenness centrality) one that has participated to the largest number of events?
 
 $$\square$$
-<hr width="75%">
 
 ## Filtering out edges from dense graphs
 
@@ -126,6 +114,9 @@ Nick et al. (2013). *Simmelian backbones: Amplifying hidden homophily in faceboo
 In their paper, Nick *et al*. came up with an elegant rationale promoting triads (cycles of length 3) as being core to the structure of a social network. Hence edges that are included in more triads are considered as constituants of the backbone.
 
 So a first statistics they compute assigns edges in a graph the number of triads they are included in. Note that this amounts to computing the number of common neighbor their incident nodes have. This, in a sense, computes the *strength* of an edge.
+
+<img src="Common_neighbor.png" width="30%">
+
 Hence, edges $$I^{(u)} = e_1, e_2, \ldots$$ incident to a node $$u$$ can be sorted in decreasing order with respect to their strength. Hence edge $$e_1$$ is the strongest, followed by $$e_2$$, and so on ...
 
 Note that, there may be cases where the strength of edges is given by a specific attributes, in which case it does not need to be computed.
