@@ -12,9 +12,7 @@ The graphs used to model these situations are bipartite: they comprise nodes or 
 
 These graphs can be studied *per se*. For instance, one can prove that a graph is bipartie exactly when (iif $$\Leftrightarrow$$) it does not contian any cycle of odd length.
 
-<hr width="75%">
 **Exercise**. Come up with a proof of this fact. $$\square$$
-<hr width="75%">
 
 Some authors have moreover claim that most social networks (or more precisely, Complex Networks)) take their origin in bipartite graphs.
 
