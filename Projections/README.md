@@ -13,7 +13,7 @@ The graphs used to model these situations are bipartite: they comprise nodes or 
 These graphs can be studied *per se*. For instance, one can prove that a graph is bipartie exactly when (iif $$\Leftrightarrow$$) it does not contian any cycle of odd length.
 
 <hr width="75%">
-***Exercise***. Come up with a proof of this fact. $$\square$$
+**Exercise**. Come up with a proof of this fact. $$\square$$
 <hr width="75%">
 
 Some authors have moreover claim that most social networks (or more precisely, Complex Networks)) take their origin in bipartite graphs.
@@ -25,7 +25,7 @@ Guillaume, J. L., & Latapy, M. (2006). *Bipartite graphs as models of complex ne
 Although giving a more accurate account of the data, bipartite graphs do not allow to readily use node centralities in order analyse the data at hand. Indeed, in a social network, the degree of a node indicates how many persons a given actor knows, while in a bipartite graphs we'd need to look at distance 2 neighbors. The situation is even more complex when considering length of paths connecting actors.
 
 <hr width="75%">
-***Exercise***. The [SoutherWomen.xml](./SoutherWomen.xml) file contains the description of a network connecting women to events they participates to. This is a widely known dataset i social sciences and network science as well.
+**Exercise**. The [SoutherWomen.xml](./SoutherWomen.xml) file contains the description of a network connecting women to events they participates to. This is a widely known dataset i social sciences and network science as well.
 
 1. What is the average number of participants in an event?
 2. To how many events does a woman participate on average?
@@ -39,7 +39,7 @@ $$\square$$
 A network solely containing entities of the same type can be derived form the original bipartite graph. This derived network is called a *one-mode projection* since it amounts to build a new graph $$G = (V, E)$$ (where $$V = X$$ for instance) induce any length two path connecting $$x - y - x'$$ to a single edge $$\{x, x'\} \in E$$.
 
 <hr width="75%">
-***Exercise***. A clique over a set of nodes $$C$$ is a graph where all pairs of nodes $$x, x' \in C$$ are connected. (Hence a clique contains $$\frac{|C| \cdot (|C|-1)}{2}$$ edges.)
+**Exercise**. A clique over a set of nodes $$C$$ is a graph where all pairs of nodes $$x, x' \in C$$ are connected. (Hence a clique contains $$\frac{|C| \cdot (|C|-1)}{2}$$ edges.)
 <hr width="75%">
 
 Let $$H$$ be a bipartite graph over nodes $$X \oplus Y$$ and $$G = (X, E)$$ be the one-mode projection on $$X$$ obtained from $$H$$. Let $$C \subset X$$ be the nodes incident to a given node $$y \in Y$$ in $$H$$. Then the clique over $$C$$ is a subgraph of $$G$$. $$\square$$
@@ -54,7 +54,7 @@ More precisely,
 we see that one-mode projection can be hard to analyze, if not visualize.
 
 <hr width="75%">
-***Exercise***. Write a python script to compute the one-mode projection of the Southern Women dataset. $$\square$$
+**Exercise**. Write a python script to compute the one-mode projection of the Southern Women dataset. $$\square$$
 <hr width="75%">
 
 ### Filtering edges using weights
@@ -78,7 +78,7 @@ $$\sum_{y \in N(x) \cap N(x')} \frac{1}{\deg(y)}$$
 Just as if being connected to a lower degree common neighbor is more significant.
 
 <hr width="75%">
-***Exercise***.
+**Exercise**.
 
 - Considering the classical weighted one-mode graphe computed from the Southern Women dataset, what is the threshold that leads to filtering out half of the lower weight edges?
 - Considering the Giatsidis weighted one-mode graphe computed from the Southern Women dataset, what is the threshold that leads to filtering out 75% of the lower weight edges?
@@ -105,9 +105,9 @@ We then may compute the value of $$k$$ for which $$P(|N(x) \cap N(x')| \geq k) \
 The figure illustrates the probability distribution when $$|Y|=30$$, $$|N(x)|=12$$ and $$|N(x')|=15$$. In this case, is appplying a threshold of $$\alpha = 0.05$$, the minimum number of events $$x, x'$$ must have in common to be significant is 8.
 
 <hr width="75%">
-***Exercise***. Starting form the Southern Women bipartite graph, compute the Neal projection scheme to with confidence threshold $$\alpha = 0.05$$ to obtain a one-mode graph between women nodes.
+**Exercise**. Starting form the Southern Women bipartite graph, compute the Neal projection scheme to with confidence threshold $$\alpha = 0.05$$ to obtain a one-mode graph between women nodes.
 
-***Exercise***. Applying the Neal projection scheme with $$\alpha = 0.05$$ confidence,
+**Exercise**. Applying the Neal projection scheme with $$\alpha = 0.05$$ confidence,
 
 - among all pairs of connected nodes (edge between any two women) which connects women having co-participated to the largest number of events?
 - is the most central woman (*w.r.t.* betweenness centrality) one that has participated to the largest number of events?
@@ -136,7 +136,7 @@ Nick et al. introduce what they call *edge redundance* denoted as $$R_k(e)$$, wh
 
 When $$k$$ is not specified, Nick et al. suggest to take the value $$k$$ for which $$R_k(e)$$ is maximum.
 
-***Exercise***. Use the [Facebook data](./Facebook.tlp) Nick et al. originally used in their paper and compute a backbone structure for this graph. The color attribute of nodes relate to students belonging to student communities. It is expected that the backbone reflects membership to their communities (clusters should group a majority of nodes with a same color).
+**Exercise**. Use the [Facebook data](./Facebook.tlp) Nick et al. originally used in their paper and compute a backbone structure for this graph. The color attribute of nodes relate to students belonging to student communities. It is expected that the backbone reflects membership to their communities (clusters should group a majority of nodes with a same color).
 
 Discuss the use of parameter $$k$$. $$\square$$
 
