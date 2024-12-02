@@ -80,7 +80,7 @@ $$\square$$
 
 Zachary Neal came up with another approach based on the idea that only less probable connection -- hence more "intentional" --  should induce an edge in the one-mode graph. That is, if nodes $$x$$ and $$x'$$ both have a high degree, the probability that they have a common neighbor $$y$$ is high, hence the edge connecting them should have a lower weight.
 
-Neal, Z. (2013). *Identifying statistically significant edges in one-mode projections*. Social Network Analysis and Mining, 3, 915-924.
+[Neal, Z. (2013). *Identifying statistically significant edges in one-mode projections*. Social Network Analysis and Mining, 3, 915-924.](./Neal_2012_OneMode.pdf)
 
 Neal suggests looking at the probability distribution of the number of common neighbors nodes $$x, x'$$ might have, and decide whether the actual number of common neighbor is actually significant or could just be pure luck.
 
