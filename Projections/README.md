@@ -22,7 +22,7 @@ Guillaume, J. L., & Latapy, M. (2006). *Bipartite graphs as models of complex ne
 
 Although giving a more accurate account of the data, bipartite graphs do not allow to readily use node centralities in order analyse the data at hand. Indeed, in a social network, the degree of a node indicates how many persons a given actor knows, while in a bipartite graphs we'd need to look at distance 2 neighbors. The situation is even more complex when considering length of paths connecting actors.
 
-***Exercise***. The [SoutherWomen.xml](./SoutherWomen.xml) file contains the description of a network connecting women to events they participates to. This is a widely known dataset i social sciences and network science as well.
+***Exercise***. The [SouthernWomen.xml](./SoutherWomen.xml) file contains the description of a network connecting women to events they participates to. This is a widely known dataset i social sciences and network science as well.
 
 1. What is the average number of participants in an event?
 2. To how many events does a woman participate on average?
